@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Patient to View Reports</title>
+    <style>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+            
+            .container {
+                max-width: 600px;
+                width: 100%;
+                background: white;
+                padding: 60px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            
+            h1 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+            
+            label {
+                font-size: 16px;
+                color: #333;
+                display: block;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+            
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            
+            button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-top: 20px;
+                background-color: #09304d;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            
+            button:hover {
+                background-color: #0b4e73;
+            }
+            
+            footer {
+                background-color: #0b4e73;
+                padding: 40px 30px;
+                text-align: center;
+                color: white;
+                margin-top: 320px;
+                width: 100%;
+            }
+            
+            .social-icon {
+                list-style: none;
+                margin: 0 auto 20px auto;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+    
+            .social-icon li {
+                transition: transform 0.3s ease;
+            }
+    
+            .social-icon li a {
+                color: #fff;
+                font-size: 24px;
+                display: block;
+                text-decoration: none;
+                background: none; /* No background */
+                border: none; /* No border */
+            }
+    
+            .social-icon li:hover {
+                transform: translateY(-10px);
+            }
+    
+            .menu {
+                list-style: none;
+                margin: 0 auto;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+    
+            .menu li a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    
+            .menu li a:hover {
+                text-decoration: underline;
+            }
+    
+            p {
+                margin: 10px 0 0 0;
+            }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Patient to View Reports</h1>
+        <form method="POST">
+            <label for="username">Enter patient username:</label>
+            <input type="text" name="username" id="username" required>
+            <button type="submit">View Reports</button>
+        </form>
+    </div>
+    <footer>
+        <ul class="social-icon">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+
+        <ul class="menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 MYHealth. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>

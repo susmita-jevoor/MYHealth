@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; 
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 80px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #09304d;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0b4e73;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #09304d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0b4e73;
+        }
+
+        footer {
+            background-color: #0b4e73;
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            width: 100%;
+            margin-top: 250px; /* Add margin to separate it from content above */
+        }
+
+        .social-icon {
+            list-style: none;
+            margin: 0 auto 20px auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon li {
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon li a {
+            color: #fff;
+            font-size: 24px;
+            display: block;
+        }
+
+        .social-icon li:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu li a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            margin: 10px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select User to Add Prescription</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.username.label }} {{ form.username() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+
+    {% if username %}
+        <!-- Link to add prescription for the selected user -->
+        <a href="{{ url_for('add_prescription', username=username) }}">Add Prescription for {{ username }}</a>
+    {% endif %}
+
+    <a href="{{ url_for('doctor_dashboard',) }}">Back to Home</a>
+    <footer>
+        <ul class="social-icon">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+
+        <ul class="menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 MYHealth. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
